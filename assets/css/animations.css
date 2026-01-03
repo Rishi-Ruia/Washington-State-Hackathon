@@ -1,8 +1,6 @@
-/* ============================================
-   Washington State Hackathon - Animations
-   ============================================ */
 
-/* ===== Gradient Shift Animation ===== */
+
+
 @keyframes gradientShift {
     0% {
         opacity: 1;
@@ -15,7 +13,7 @@
     }
 }
 
-/* ===== Border Rotate Animation ===== */
+
 @keyframes borderRotate {
     0% {
         filter: hue-rotate(0deg);
@@ -25,7 +23,7 @@
     }
 }
 
-/* ===== Float Animation ===== */
+
 @keyframes float {
     0%, 100% {
         transform: translateY(0px);
@@ -39,7 +37,7 @@
     animation: float 6s ease-in-out infinite;
 }
 
-/* ===== Pulse Animation ===== */
+
 @keyframes pulse {
     0%, 100% {
         opacity: 1;
@@ -55,7 +53,7 @@
     animation: pulse 2s ease-in-out infinite;
 }
 
-/* ===== Glow Animation ===== */
+
 @keyframes glow {
     0%, 100% {
         box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
@@ -69,7 +67,7 @@
     animation: glow 3s ease-in-out infinite;
 }
 
-/* ===== Slide In From Left ===== */
+
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -85,7 +83,7 @@
     animation: slideInLeft 0.6s ease-out;
 }
 
-/* ===== Slide In From Right ===== */
+
 @keyframes slideInRight {
     from {
         opacity: 0;
@@ -101,7 +99,7 @@
     animation: slideInRight 0.6s ease-out;
 }
 
-/* ===== Fade In Up ===== */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -117,7 +115,7 @@
     animation: fadeInUp 0.6s ease-out;
 }
 
-/* ===== Scale In ===== */
+
 @keyframes scaleIn {
     from {
         opacity: 0;
@@ -133,7 +131,7 @@
     animation: scaleIn 0.5s ease-out;
 }
 
-/* ===== Bounce In ===== */
+
 @keyframes bounceIn {
     0% {
         opacity: 0;
@@ -155,7 +153,7 @@
     animation: bounceIn 0.8s ease-out;
 }
 
-/* ===== Shimmer Effect ===== */
+
 @keyframes shimmer {
     0% {
         background-position: -1000px 0;
@@ -176,7 +174,7 @@
     animation: shimmer 3s infinite;
 }
 
-/* ===== Rotate Animation ===== */
+
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -190,7 +188,7 @@
     animation: rotate 20s linear infinite;
 }
 
-/* ===== Wiggle Animation ===== */
+
 @keyframes wiggle {
     0%, 100% {
         transform: rotate(0deg);
@@ -207,7 +205,7 @@
     animation: wiggle 1s ease-in-out;
 }
 
-/* ===== Heartbeat Animation ===== */
+
 @keyframes heartbeat {
     0%, 100% {
         transform: scale(1);
@@ -224,7 +222,7 @@
     animation: heartbeat 2s ease-in-out infinite;
 }
 
-/* ===== Text Reveal Animation ===== */
+
 @keyframes textReveal {
     from {
         clip-path: inset(0 100% 0 0);
@@ -238,7 +236,7 @@
     animation: textReveal 1s ease-out;
 }
 
-/* ===== Gradient Animation for Backgrounds ===== */
+
 @keyframes gradientMove {
     0% {
         background-position: 0% 50%;
@@ -256,7 +254,7 @@
     animation: gradientMove 8s ease infinite;
 }
 
-/* ===== Fade In Animation ===== */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -270,7 +268,7 @@
     animation: fadeIn 1s ease-in;
 }
 
-/* ===== Slide Down Animation ===== */
+
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -286,7 +284,7 @@
     animation: slideDown 0.4s ease-out;
 }
 
-/* ===== Zoom In Animation ===== */
+
 @keyframes zoomIn {
     from {
         opacity: 0;
@@ -302,7 +300,7 @@
     animation: zoomIn 0.5s ease-out;
 }
 
-/* ===== Color Shift Animation ===== */
+
 @keyframes colorShift {
     0% {
         filter: hue-rotate(0deg);
@@ -319,7 +317,7 @@
     animation: colorShift 10s linear infinite;
 }
 
-/* ===== Typing Cursor Animation ===== */
+
 @keyframes blink {
     0%, 50% {
         opacity: 1;
@@ -333,7 +331,7 @@
     animation: blink 1s step-end infinite;
 }
 
-/* ===== Shake Animation ===== */
+
 @keyframes shake {
     0%, 100% {
         transform: translateX(0);
@@ -350,7 +348,7 @@
     animation: shake 0.5s ease-in-out;
 }
 
-/* ===== Flip Animation ===== */
+
 @keyframes flip {
     from {
         transform: perspective(400px) rotateY(0);
@@ -364,7 +362,7 @@
     animation: flip 1s ease-in-out;
 }
 
-/* ===== Hover Grow Effect ===== */
+
 .hover-grow {
     transition: transform 0.3s ease;
 }
@@ -373,7 +371,7 @@
     transform: scale(1.05);
 }
 
-/* ===== Hover Glow Effect ===== */
+
 .hover-glow {
     transition: box-shadow 0.3s ease;
 }
@@ -382,7 +380,7 @@
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
 }
 
-/* ===== Loading Spinner ===== */
+
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -396,7 +394,7 @@
     animation: spin 1s linear infinite;
 }
 
-/* ===== Utility Classes for Delays ===== */
+
 .delay-100 {
     animation-delay: 100ms;
 }
@@ -417,7 +415,7 @@
     animation-delay: 500ms;
 }
 
-/* ===== Reduced Motion for Accessibility ===== */
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

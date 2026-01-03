@@ -1,10 +1,4 @@
-// ============================================
-// Washington State Hackathon - Main JavaScript
-// ============================================
-
-// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS (Animate On Scroll)
     AOS.init({
         duration: 800,
         easing: 'ease-in-out',
@@ -13,23 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
         delay: 0
     });
 
-    // Navbar scroll effect
     initNavbar();
-
-    // Smooth scrolling for navigation links
     initSmoothScroll();
-
-    // Mobile menu toggle
     initMobileMenu();
-
-    // FAQ accordion
     initFAQ();
-
-    // Close mobile menu when clicking links
     closeMobileMenuOnClick();
 });
 
-// ===== Navbar Scroll Effect =====
 function initNavbar() {
     const navbar = document.getElementById('navbar');
 
@@ -42,16 +26,13 @@ function initNavbar() {
     });
 }
 
-// ===== Smooth Scrolling =====
 function initSmoothScroll() {
-    // Get all links that start with #
     const links = document.querySelectorAll('a[href^="#"]');
 
     links.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
 
-            // Don't prevent default for # only (for disabled buttons)
             if (href === '#') {
                 e.preventDefault();
                 return;
@@ -62,7 +43,6 @@ function initSmoothScroll() {
             if (target) {
                 e.preventDefault();
 
-                // Get navbar height for offset
                 const navbarHeight = document.getElementById('navbar').offsetHeight;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
 
@@ -75,7 +55,6 @@ function initSmoothScroll() {
     });
 }
 
-// ===== Mobile Menu Toggle =====
 function initMobileMenu() {
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -84,7 +63,6 @@ function initMobileMenu() {
         menuToggle.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
 
-            // Animate the menu icon
             const icon = this.querySelector('svg');
             if (icon) {
                 icon.classList.toggle('rotate-90');
@@ -93,7 +71,6 @@ function initMobileMenu() {
     }
 }
 
-// ===== Close Mobile Menu When Clicking Links =====
 function closeMobileMenuOnClick() {
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = mobileMenu.querySelectorAll('a');
@@ -105,7 +82,6 @@ function closeMobileMenuOnClick() {
     });
 }
 
-// ===== FAQ Accordion =====
 function initFAQ() {
     const faqQuestions = document.querySelectorAll('.faq-question');
 
@@ -114,7 +90,6 @@ function initFAQ() {
             const answer = this.nextElementSibling;
             const icon = this.querySelector('.icon');
 
-            // Close other open FAQs (optional - remove if you want multiple open)
             const allAnswers = document.querySelectorAll('.faq-answer');
             const allIcons = document.querySelectorAll('.faq-question .icon');
             const allQuestions = document.querySelectorAll('.faq-question');
@@ -137,7 +112,6 @@ function initFAQ() {
                 }
             });
 
-            // Toggle current FAQ
             answer.classList.toggle('hidden');
             icon.classList.toggle('rotate-180');
             this.classList.toggle('active');
@@ -145,16 +119,13 @@ function initFAQ() {
     });
 }
 
-// ===== Scroll to Top Button (Optional Enhancement) =====
 function initScrollToTop() {
-    // Create scroll to top button
     const scrollBtn = document.createElement('button');
     scrollBtn.innerHTML = '↑';
     scrollBtn.className = 'scroll-to-top hidden';
     scrollBtn.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(scrollBtn);
 
-    // Show/hide button based on scroll position
     window.addEventListener('scroll', function() {
         if (window.scrollY > 500) {
             scrollBtn.classList.remove('hidden');
@@ -163,7 +134,6 @@ function initScrollToTop() {
         }
     });
 
-    // Scroll to top on click
     scrollBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
@@ -172,7 +142,6 @@ function initScrollToTop() {
     });
 }
 
-// ===== Add Active State to Navigation =====
 function updateActiveNav() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -197,7 +166,6 @@ function updateActiveNav() {
     });
 }
 
-// ===== Parallax Effect for Hero (Optional) =====
 function initParallax() {
     const hero = document.getElementById('hero');
 
@@ -210,7 +178,6 @@ function initParallax() {
     }
 }
 
-// ===== Form Validation (if forms are added later) =====
 function validateForm(formId) {
     const form = document.getElementById(formId);
 
@@ -218,7 +185,6 @@ function validateForm(formId) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Get form inputs
             const inputs = form.querySelectorAll('input[required], textarea[required]');
             let isValid = true;
 
@@ -232,7 +198,6 @@ function validateForm(formId) {
             });
 
             if (isValid) {
-                // Submit form
                 form.submit();
             } else {
                 alert('Please fill in all required fields.');
@@ -241,7 +206,6 @@ function validateForm(formId) {
     }
 }
 
-// ===== Add Loading State to Buttons =====
 function addButtonLoader(buttonSelector) {
     const buttons = document.querySelectorAll(buttonSelector);
 
@@ -255,13 +219,11 @@ function addButtonLoader(buttonSelector) {
     });
 }
 
-// ===== Console Message =====
 console.log('%c🚀 The Washington State Hackathon', 'color: #6366F1; font-size: 20px; font-weight: bold;');
 console.log('%cBuild. Impact. Inspire.', 'color: #EC4899; font-size: 16px;');
 console.log('%cJanuary 24-25, 2026', 'color: #14B8A6; font-size: 14px;');
 console.log('%cInterested in how this site was built? Check out the code on GitHub!', 'color: #64748B; font-size: 12px;');
 
-// ===== Easter Egg: Konami Code =====
 (function() {
     const konamiCode = [
         'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
@@ -293,7 +255,6 @@ console.log('%cInterested in how this site was built? Check out the code on GitH
     }
 })();
 
-// ===== Performance Optimization: Lazy Load Images =====
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -310,7 +271,6 @@ if ('IntersectionObserver' in window) {
     lazyImages.forEach(img => imageObserver.observe(img));
 }
 
-// ===== Accessibility: Skip to Content Link =====
 function addSkipLink() {
     const skipLink = document.createElement('a');
     skipLink.href = '#main-content';
@@ -319,13 +279,11 @@ function addSkipLink() {
     document.body.insertBefore(skipLink, document.body.firstChild);
 }
 
-// ===== Dark Mode Toggle (Optional - commented out) =====
 /*
 function initDarkMode() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
 
     if (darkModeToggle) {
-        // Check for saved preference
         const darkMode = localStorage.getItem('darkMode');
 
         if (darkMode === 'enabled') {

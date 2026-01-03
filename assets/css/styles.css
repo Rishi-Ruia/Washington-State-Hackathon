@@ -1,8 +1,6 @@
-/* ============================================
-   Washington State Hackathon - Custom Styles
-   ============================================ */
 
-/* ===== Global Styles ===== */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== Hero Section ===== */
+
 .hero-gradient {
     background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
     position: relative;
@@ -36,7 +34,7 @@ body {
     animation: gradientShift 15s ease infinite;
 }
 
-/* Hero Gradient Overlay (for video background support) */
+
 .hero-gradient-overlay {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.85) 0%, rgba(236, 72, 153, 0.85) 100%);
     z-index: 1;
@@ -55,7 +53,7 @@ body {
     animation: gradientShift 15s ease infinite;
 }
 
-/* ===== Navigation ===== */
+
 #navbar {
     background: transparent;
 }
@@ -87,7 +85,7 @@ body {
     width: 100%;
 }
 
-/* ===== Buttons ===== */
+
 .btn-primary {
     background: linear-gradient(135deg, #14B8A6 0%, #6366F1 100%);
     color: white;
@@ -121,7 +119,7 @@ body {
     box-shadow: 0 15px 35px -5px rgba(99, 102, 241, 0.6);
 }
 
-/* ===== Cards ===== */
+
 .card {
     background: white;
     padding: 2rem;
@@ -135,7 +133,7 @@ body {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== Challenge Box ===== */
+
 .challenge-box {
     background: white;
     padding: 3rem;
@@ -166,7 +164,7 @@ body {
     opacity: 0.5;
 }
 
-/* ===== Submission Cards ===== */
+
 .submission-card {
     background: white;
     padding: 2.5rem;
@@ -193,7 +191,7 @@ body {
     letter-spacing: 0.05em;
 }
 
-/* ===== Resource Cards ===== */
+
 .resource-card {
     background: white;
     padding: 2rem;
@@ -210,7 +208,7 @@ body {
     transform: translateX(4px);
 }
 
-/* ===== FAQ Items ===== */
+
 .faq-item {
     background: white;
     border: 2px solid #E2E8F0;
@@ -259,7 +257,7 @@ body {
     transform: rotate(180deg);
 }
 
-/* ===== Scroll Indicator ===== */
+
 .scroll-indicator {
     animation: bounce 2s infinite;
 }
@@ -273,12 +271,12 @@ body {
     }
 }
 
-/* ===== Countdown Timer ===== */
+
 #hero .grid > div {
     backdrop-filter: blur(16px);
 }
 
-/* ===== Responsive Adjustments ===== */
+
 @media (max-width: 768px) {
     .challenge-box {
         padding: 2rem;
@@ -302,7 +300,7 @@ body {
     }
 }
 
-/* ===== Utility Classes ===== */
+
 .text-gradient {
     background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
     -webkit-background-clip: text;
@@ -310,12 +308,12 @@ body {
     background-clip: text;
 }
 
-/* ===== Smooth Transitions ===== */
+
 a, button {
     transition: all 0.3s ease;
 }
 
-/* ===== Selection Color ===== */
+
 ::selection {
     background: #EC4899;
     color: white;
@@ -326,7 +324,7 @@ a, button {
     color: white;
 }
 
-/* ===== Scrollbar Styling (Webkit browsers) ===== */
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -344,13 +342,13 @@ a, button {
     background: linear-gradient(180deg, #4F46E5 0%, #DB2777 100%);
 }
 
-/* ===== Focus Styles for Accessibility ===== */
+
 a:focus, button:focus {
     outline: 2px solid #6366F1;
     outline-offset: 2px;
 }
 
-/* ===== Print Styles ===== */
+
 @media print {
     .hero-gradient, #navbar, footer {
         display: none;
