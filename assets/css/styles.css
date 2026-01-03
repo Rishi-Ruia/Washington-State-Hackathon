@@ -1,0 +1,358 @@
+/* ============================================
+   Washington State Hackathon - Custom Styles
+   ============================================ */
+
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* ===== Hero Section ===== */
+.hero-gradient {
+    background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+    position: relative;
+}
+
+.hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(20, 184, 166, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.3) 0%, transparent 50%);
+    animation: gradientShift 15s ease infinite;
+}
+
+/* Hero Gradient Overlay (for video background support) */
+.hero-gradient-overlay {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.85) 0%, rgba(236, 72, 153, 0.85) 100%);
+    z-index: 1;
+}
+
+.hero-gradient-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(20, 184, 166, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.3) 0%, transparent 50%);
+    animation: gradientShift 15s ease infinite;
+}
+
+/* ===== Navigation ===== */
+#navbar {
+    background: transparent;
+}
+
+#navbar.scrolled {
+    background: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #14B8A6;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+    background: linear-gradient(135deg, #14B8A6 0%, #6366F1 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 1.125rem;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px -5px rgba(99, 102, 241, 0.6);
+}
+
+/* ===== Cards ===== */
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Challenge Box ===== */
+.challenge-box {
+    background: white;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    border: 4px solid transparent;
+    background-image:
+        linear-gradient(white, white),
+        linear-gradient(135deg, #6366F1, #EC4899, #14B8A6);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.challenge-box::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 1.5rem;
+    padding: 4px;
+    background: linear-gradient(135deg, #6366F1, #EC4899, #14B8A6);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderRotate 3s linear infinite;
+    opacity: 0.5;
+}
+
+/* ===== Submission Cards ===== */
+.submission-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.submission-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.2);
+}
+
+.requirement-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.375rem 0.875rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ===== Resource Cards ===== */
+.resource-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card a {
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.resource-card a:hover {
+    transform: translateX(4px);
+}
+
+/* ===== FAQ Items ===== */
+.faq-item {
+    background: white;
+    border: 2px solid #E2E8F0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #6366F1;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+    border: none;
+    transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+    background: #F8FAFC;
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    color: #64748B;
+    line-height: 1.6;
+}
+
+.faq-answer.hidden {
+    display: none;
+}
+
+.faq-question .icon {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .icon {
+    transform: rotate(180deg);
+}
+
+/* ===== Scroll Indicator ===== */
+.scroll-indicator {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    50% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+/* ===== Countdown Timer ===== */
+#hero .grid > div {
+    backdrop-filter: blur(16px);
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+    .challenge-box {
+        padding: 2rem;
+    }
+
+    .submission-card {
+        padding: 1.5rem;
+    }
+
+    .btn-primary {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero .text-2xl {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===== Utility Classes ===== */
+.text-gradient {
+    background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== Smooth Transitions ===== */
+a, button {
+    transition: all 0.3s ease;
+}
+
+/* ===== Selection Color ===== */
+::selection {
+    background: #EC4899;
+    color: white;
+}
+
+::-moz-selection {
+    background: #EC4899;
+    color: white;
+}
+
+/* ===== Scrollbar Styling (Webkit browsers) ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6366F1 0%, #EC4899 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #4F46E5 0%, #DB2777 100%);
+}
+
+/* ===== Focus Styles for Accessibility ===== */
+a:focus, button:focus {
+    outline: 2px solid #6366F1;
+    outline-offset: 2px;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    .hero-gradient, #navbar, footer {
+        display: none;
+    }
+}
