@@ -32,159 +32,55 @@ function updateElement(id, value) {
 
         if (element.textContent !== displayValue.toString()) {
             element.textContent = displayValue;
-            element.classList.add('pulse-animation');
-            setTimeout(() => {
-                element.classList.remove('pulse-animation');
-            }, 300);
         }
     }
 }
 
 function displayEventStarted() {
-    const countdownSection = document.querySelector('#hero .grid');
+    const countdownSection = document.getElementById('countdown-container');
 
     if (countdownSection) {
+        countdownSection.className = "text-center py-8";
         countdownSection.innerHTML = `
-            <div class="col-span-4 text-center">
-                <div class="text-4xl md:text-5xl font-poppins font-bold text-white mb-4">
-                    🎉 The Hackathon Has Started! 🎉
+            <div class="w-full">
+                <div class="text-3xl md:text-4xl font-poppins font-bold text-slate-900 mb-4">
+                    It's Live!
                 </div>
-                <p class="text-xl text-white">
-                    Good luck to all participants! Build something amazing!
+                <p class="text-lg text-slate-600">
+                    The hackathon has officially started. Good luck!
                 </p>
             </div>
         `;
     }
-
+    
     const challengeContent = document.getElementById('challenge-content');
     const challengeHiddenMessage = document.getElementById('challenge-hidden-message');
-    const faqCommunity = document.getElementById('faq-community');
-
-    if (challengeContent) {
-        challengeContent.classList.remove('hidden');
-        if (typeof AOS !== 'undefined') {
-            setTimeout(() => AOS.refresh(), 100);
-        }
-    }
+    if (challengeContent) challengeContent.classList.remove('hidden');
+    if (challengeHiddenMessage) challengeHiddenMessage.classList.add('hidden');
     
-    if (challengeHiddenMessage) {
-        challengeHiddenMessage.classList.add('hidden');
-    }
-
-    if (faqCommunity) {
-        faqCommunity.classList.remove('hidden');
-    }
-
     const submitButton = document.getElementById('submit-button');
     if (submitButton) {
         submitButton.href = "https://docs.google.com/forms/d/e/1FAIpQLSdd3baXpk2fH5qubkZAkHNPaVnae8yNJs0AFryhj5DAbOvTKQ/viewform?usp=publish-editor";
         submitButton.target = "_blank";
         submitButton.classList.remove('opacity-50', 'cursor-not-allowed');
-        submitButton.classList.add('hover:shadow-xl', 'transition-all', 'hover:scale-105');
         submitButton.textContent = "Submit Your Project";
-
-        const messageContainer = submitButton.previousElementSibling;
-        if (messageContainer) {
-            messageContainer.className = "bg-green-50 border-2 border-green-300 rounded-xl p-6 mb-8 max-w-2xl mx-auto";
-            messageContainer.innerHTML = `
-                <p class="text-lg font-semibold text-green-800 mb-2">Submissions are Open!</p>
-                <p class="text-slate-700">Ready to showcase your project? Click the button below to submit your video/presentation and project details.</p>
-            `;
-        }
     }
 }
 
 function displayEventEnded() {
-    const countdownSection = document.querySelector('#hero .grid');
+    const countdownSection = document.getElementById('countdown-container');
 
     if (countdownSection) {
+        countdownSection.className = "text-center py-8";
         countdownSection.innerHTML = `
-            <div class="col-span-4 text-center">
-                <div class="text-4xl md:text-5xl font-poppins font-bold text-white mb-4">
-                    🏆 The Hackathon Has Ended! 🏆
+            <div class="w-full">
+                <div class="text-3xl md:text-4xl font-poppins font-bold text-slate-900 mb-4">
+                    Event Ended
                 </div>
-                <p class="text-xl text-white">
-                    Thank you to all participants! Results coming soon.
+                <p class="text-lg text-slate-600">
+                    Thank you for participating!
                 </p>
             </div>
         `;
     }
-}
-
-function getTimeUntilEvent() {
-    const now = new Date().getTime();
-    const timeRemaining = hackathonDate - now;
-
-    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-    return {
-        days,
-        hours,
-        minutes,
-        seconds,
-        total: timeRemaining
-    };
-}
-
-function formatCountdown() {
-    const time = getTimeUntilEvent();
-
-    if (time.total < 0) {
-        return 'Event has started!';
-    }
-
-    let parts = [];
-
-    if (time.days > 0) {
-        parts.push(`${time.days} day${time.days !== 1 ? 's' : ''}`);
-    }
-    if (time.hours > 0) {
-        parts.push(`${time.hours} hour${time.hours !== 1 ? 's' : ''}`);
-    }
-    if (time.minutes > 0) {
-        parts.push(`${time.minutes} minute${time.minutes !== 1 ? 's' : ''}`);
-    }
-    if (time.seconds > 0 && parts.length === 0) {
-        parts.push(`${time.seconds} second${time.seconds !== 1 ? 's' : ''}`);
-    }
-
-    return parts.join(', ');
-}
-
-function addUrgencyIndicator() {
-    const time = getTimeUntilEvent();
-    const urgencyElement = document.getElementById('urgency-indicator');
-
-    if (!urgencyElement) return;
-
-    if (time.total < 0) {
-        urgencyElement.textContent = '';
-        return;
-    }
-
-    if (time.days < 1) {
-        urgencyElement.textContent = '⚡ Less than 24 hours to go!';
-        urgencyElement.className = 'urgency-high';
-    }
-    else if (time.days < 7) {
-        urgencyElement.textContent = '🔥 Less than a week away!';
-        urgencyElement.className = 'urgency-medium';
-    }
-    else if (time.days < 30) {
-        urgencyElement.textContent = '📅 Coming up soon!';
-        urgencyElement.className = 'urgency-low';
-    }
-}
-
-console.log(`⏰ Time until hackathon: ${formatCountdown()}`);
-
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        getTimeUntilEvent,
-        formatCountdown,
-        updateCountdown
-    };
 }
