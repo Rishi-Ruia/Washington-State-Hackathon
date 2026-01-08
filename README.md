@@ -16,12 +16,12 @@ The Washington State Hackathon is an event dedicated to leting high school stude
 ## Participation Rules
 
 - **Eligibility:** Open to all high school students currently attending school in Washington State.
-- **Team Size:** Solo or teams of up to **2 members**.
+- **Participation:** Individual participation only.
 - **AI Policy:** Modern development tools, including AI assistants like ChatGPT, Claude, and GitHub Copilot, are allowed and encouraged.
 
 ## Submission Requirements
 
-To be considered for judging, teams must submit:
+To be considered for judging, participants must submit:
 1. **Video or PowerPoint:** A short demo or presentation of the project.
 2. **Written Explanation:** A description of why you built your product (what is its impact)
 3. **Live Link (Optional):** A link to the deployed website or app.
